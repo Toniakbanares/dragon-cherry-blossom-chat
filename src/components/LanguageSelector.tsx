@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { useLanguage, Language } from '@/contexts/LanguageContext';
+import { useTheme } from '@/contexts/ThemeContext';
 
 const flags = {
   pt: '🇧🇷',
@@ -10,6 +11,7 @@ const flags = {
 
 export const LanguageSelector = () => {
   const { language, setLanguage } = useLanguage();
+  const { theme } = useTheme();
 
   const handleLanguageChange = (lang: Language) => {
     setLanguage(lang);
@@ -26,7 +28,9 @@ export const LanguageSelector = () => {
           className={`text-sm font-medium transition-all ${
             language === lang 
               ? "bg-primary text-primary-foreground shadow-lg" 
-              : "bg-white/10 text-white border-white/20 hover:bg-white/20 hover:border-white/40"
+              : theme === 'light'
+                ? "bg-white/80 text-gray-800 border-gray-300 hover:bg-white hover:border-gray-400"
+                : "bg-white/10 text-white border-white/20 hover:bg-white/20 hover:border-white/40"
           }`}
         >
           {flag} {lang.toUpperCase()}

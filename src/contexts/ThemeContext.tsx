@@ -14,27 +14,31 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     const savedTheme = localStorage.getItem('theme') as 'light' | 'dark';
     if (savedTheme) {
       setTheme(savedTheme);
-    } else {
-      // Default to dark theme
-      setTheme('dark');
     }
   }, []);
 
   useEffect(() => {
     localStorage.setItem('theme', theme);
-    const htmlElement = document.documentElement;
+    const root = document.documentElement;
+    const body = document.body;
     
-    if (theme === 'dark') {
-      htmlElement.classList.add('dark');
-      htmlElement.classList.remove('light');
-    } else {
-      htmlElement.classList.add('light');
-      htmlElement.classList.remove('dark');
-    }
+    // Remove both classes first
+    root.classList.remove('light', 'dark');
+    body.classList.remove('light', 'dark');
+    
+    // Add the current theme class
+    root.classList.add(theme);
+    body.classList.add(theme);
+    
+    console.log(`Theme changed to: ${theme}`);
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme(prev => prev === 'light' ? 'dark' : 'light');
+    setTheme(prev => {
+      const newTheme = prev === 'light' ? 'dark' : 'light';
+      console.log(`Toggling theme from ${prev} to ${newTheme}`);
+      return newTheme;
+    });
   };
 
   return (
