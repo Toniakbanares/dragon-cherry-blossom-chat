@@ -63,16 +63,19 @@ export const Chat = () => {
   };
 
   return (
-    <Card className="w-full max-w-2xl mx-auto bg-background/90 backdrop-blur-sm border-border/50">
-      <CardHeader>
-        <CardTitle className="flex items-center gap-2">
-          <MessageCircle className="h-5 w-5" />
+    <Card className="w-full max-w-2xl mx-auto bg-card/95 backdrop-blur-md border-border/50 shadow-2xl">
+      <CardHeader className="bg-gradient-to-r from-primary/10 to-accent/10 border-b border-border/50">
+        <CardTitle className="flex items-center gap-2 text-foreground">
+          <MessageCircle className="h-6 w-6 text-primary" />
           {t('chat')}
-          <span className="text-sm text-green-500 ml-auto">{t('online')}</span>
+          <div className="ml-auto flex items-center gap-2">
+            <div className="h-2 w-2 bg-green-500 rounded-full animate-pulse"></div>
+            <span className="text-sm text-green-500 font-medium">{t('online')}</span>
+          </div>
         </CardTitle>
       </CardHeader>
-      <CardContent>
-        <ScrollArea className="h-96 w-full rounded-md border p-4 mb-4" ref={scrollAreaRef}>
+      <CardContent className="p-6">
+        <ScrollArea className="h-96 w-full rounded-lg border border-border/50 p-4 mb-4 bg-background/50" ref={scrollAreaRef}>
           <div className="space-y-4">
             {messages.map((message) => (
               <div
@@ -80,30 +83,34 @@ export const Chat = () => {
                 className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 <div
-                  className={`max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${
+                  className={`max-w-xs lg:max-w-md px-4 py-3 rounded-2xl shadow-sm ${
                     message.sender === 'user'
-                      ? 'bg-primary text-primary-foreground'
-                      : 'bg-muted text-muted-foreground'
+                      ? 'bg-primary text-primary-foreground rounded-br-md'
+                      : 'bg-secondary text-secondary-foreground rounded-bl-md'
                   }`}
                 >
-                  <p className="text-sm">{message.text}</p>
-                  <p className="text-xs opacity-70 mt-1">
-                    {message.timestamp.toLocaleTimeString()}
+                  <p className="text-sm leading-relaxed">{message.text}</p>
+                  <p className="text-xs opacity-70 mt-2 text-right">
+                    {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                   </p>
                 </div>
               </div>
             ))}
           </div>
         </ScrollArea>
-        <div className="flex gap-2">
+        <div className="flex gap-3">
           <Input
             value={inputMessage}
             onChange={(e) => setInputMessage(e.target.value)}
             onKeyPress={handleKeyPress}
             placeholder={t('typePlaceholder')}
-            className="flex-1"
+            className="flex-1 bg-background/80 border-border/50 focus:border-primary/50 rounded-lg"
           />
-          <Button onClick={handleSendMessage} size="sm">
+          <Button 
+            onClick={handleSendMessage} 
+            size="sm"
+            className="px-6 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg shadow-md"
+          >
             <Send className="h-4 w-4" />
           </Button>
         </div>

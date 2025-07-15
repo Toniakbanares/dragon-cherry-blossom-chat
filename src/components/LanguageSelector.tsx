@@ -23,7 +23,11 @@ export const LanguageSelector = () => {
           variant={language === lang ? "default" : "outline"}
           size="sm"
           onClick={() => handleLanguageChange(lang as Language)}
-          className="text-sm"
+          className={`text-sm font-medium transition-all ${
+            language === lang 
+              ? "bg-primary text-primary-foreground shadow-lg" 
+              : "bg-white/10 text-white border-white/20 hover:bg-white/20 hover:border-white/40"
+          }`}
         >
           {flag} {lang.toUpperCase()}
         </Button>

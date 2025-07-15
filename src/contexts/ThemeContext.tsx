@@ -14,15 +14,22 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     const savedTheme = localStorage.getItem('theme') as 'light' | 'dark';
     if (savedTheme) {
       setTheme(savedTheme);
+    } else {
+      // Default to dark theme
+      setTheme('dark');
     }
   }, []);
 
   useEffect(() => {
     localStorage.setItem('theme', theme);
+    const htmlElement = document.documentElement;
+    
     if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
+      htmlElement.classList.add('dark');
+      htmlElement.classList.remove('light');
     } else {
-      document.documentElement.classList.remove('dark');
+      htmlElement.classList.add('light');
+      htmlElement.classList.remove('dark');
     }
   }, [theme]);
 
