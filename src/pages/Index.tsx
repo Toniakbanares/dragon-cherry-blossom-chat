@@ -5,7 +5,7 @@ import { LanguageSelector } from '@/components/LanguageSelector';
 import { Chat } from '@/components/Chat';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useTheme } from '@/contexts/ThemeContext';
-import dragonBackground from '@/assets/dragon-pink-cherry.jpg';
+import dragonBackground from '@/assets/dragon-orange-cherry.jpg';
 
 const Index = () => {
   const { t } = useLanguage();
