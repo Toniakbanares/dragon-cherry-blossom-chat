@@ -5,7 +5,7 @@ import { LanguageSelector } from '@/components/LanguageSelector';
 import { Chat } from '@/components/Chat';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useTheme } from '@/contexts/ThemeContext';
-import cherryBackground from '@/assets/orange-cherry-petals.jpg';
+// Using gradient background instead of image with dragon
 
 const Index = () => {
   const { t } = useLanguage();
@@ -22,12 +22,7 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       {/* Hero Section */}
       <section 
-        className="min-h-screen flex items-center justify-center relative bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: theme === 'light' 
-            ? `linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(${cherryBackground})`
-            : `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${cherryBackground})`
-        }}
+        className="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-pink-100 via-orange-50 to-pink-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
       >
         {/* Header */}
         <div className="absolute top-6 left-6 right-6 flex justify-between items-center z-20">
