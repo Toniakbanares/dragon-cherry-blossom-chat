@@ -5,7 +5,7 @@ import { LanguageSelector } from '@/components/LanguageSelector';
 import { Chat } from '@/components/Chat';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useTheme } from '@/contexts/ThemeContext';
-import dragonBackground from '@/assets/orange-cherry-petals.jpg';
+import cherryBackground from '@/assets/orange-cherry-petals.jpg';
 
 const Index = () => {
   const { t } = useLanguage();
@@ -25,8 +25,8 @@ const Index = () => {
         className="min-h-screen flex items-center justify-center relative bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: theme === 'light' 
-            ? `linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(${dragonBackground})`
-            : `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${dragonBackground})`
+            ? `linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(${cherryBackground})`
+            : `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${cherryBackground})`
         }}
       >
         {/* Header */}
