@@ -57,6 +57,26 @@ const Index = () => {
           </div>
         </div>
         
+        {/* Símbolos do Infinito Dourados Flutuantes */}
+        <div className="absolute top-16 left-16 opacity-30">
+          <Infinity className="w-12 h-12 text-yellow-400 animate-bounce" style={{animationDelay: '0s'}} />
+        </div>
+        <div className="absolute top-32 right-24 opacity-25">
+          <Infinity className="w-8 h-8 text-amber-400 animate-pulse" style={{animationDelay: '1s'}} />
+        </div>
+        <div className="absolute bottom-40 left-24 opacity-35">
+          <Infinity className="w-16 h-16 text-orange-400 animate-bounce" style={{animationDelay: '2s'}} />
+        </div>
+        <div className="absolute bottom-24 right-20 opacity-20">
+          <Infinity className="w-10 h-10 text-yellow-500 animate-pulse" style={{animationDelay: '0.5s'}} />
+        </div>
+        <div className="absolute top-1/2 left-8 opacity-40">
+          <Infinity className="w-14 h-14 text-amber-500 animate-spin-slow" style={{animationDelay: '1.5s'}} />
+        </div>
+        <div className="absolute top-1/3 right-12 opacity-30">
+          <Infinity className="w-6 h-6 text-yellow-300 animate-bounce" style={{animationDelay: '3s'}} />
+        </div>
+        
         {/* Floating Golden Particles */}
         <div className="absolute top-20 left-10 opacity-40">
           <div className="w-4 h-4 bg-yellow-400 rounded-full animate-bounce blur-sm" style={{animationDelay: '0s'}} />
@@ -149,16 +169,6 @@ const Index = () => {
                       <Infinity className="w-32 h-32 text-amber-200 opacity-60" />
                     </div>
                   </div>
-                </div>
-                
-                {/* Botão de play */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <button 
-                    className="w-20 h-20 rounded-full bg-yellow-400/90 text-yellow-900 flex items-center justify-center hover:bg-yellow-300 transition-all hover:scale-110 shadow-lg"
-                    onClick={() => alert('Vídeo promocional com música binaural - Em breve!')}
-                  >
-                    <Play className="w-8 h-8 ml-1" />
-                  </button>
                 </div>
                 
                 {/* Partículas flutuantes */}

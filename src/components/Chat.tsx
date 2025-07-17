@@ -63,19 +63,19 @@ export const Chat = () => {
   };
 
   return (
-    <Card className="w-full max-w-2xl mx-auto bg-card/95 backdrop-blur-md border-border/50 shadow-2xl">
-      <CardHeader className="bg-gradient-to-r from-primary/10 to-accent/10 border-b border-border/50">
+    <Card className="w-full max-w-2xl mx-auto bg-card/95 backdrop-blur-md border-green-300/50 shadow-2xl">
+      <CardHeader className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 border-b border-green-300/50">
         <CardTitle className="flex items-center gap-2 text-foreground">
-          <MessageCircle className="h-6 w-6 text-primary" />
+          <MessageCircle className="h-6 w-6 text-green-600" />
           {t('chat')}
           <div className="ml-auto flex items-center gap-2">
             <div className="h-2 w-2 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="text-sm text-green-500 font-medium">{t('online')}</span>
+            <span className="text-sm text-green-600 font-medium">{t('online')}</span>
           </div>
         </CardTitle>
       </CardHeader>
       <CardContent className="p-6">
-        <ScrollArea className="h-96 w-full rounded-lg border border-border/50 p-4 mb-4 bg-background/50" ref={scrollAreaRef}>
+        <ScrollArea className="h-96 w-full rounded-lg border border-green-300/50 p-4 mb-4 bg-background/50" ref={scrollAreaRef}>
           <div className="space-y-4">
             {messages.map((message) => (
               <div
@@ -85,8 +85,8 @@ export const Chat = () => {
                 <div
                   className={`max-w-xs lg:max-w-md px-4 py-3 rounded-2xl shadow-sm ${
                     message.sender === 'user'
-                      ? 'bg-primary text-primary-foreground rounded-br-md'
-                      : 'bg-secondary text-secondary-foreground rounded-bl-md'
+                      ? 'bg-green-600 text-white rounded-br-md'
+                      : 'bg-green-100 text-green-800 rounded-bl-md border border-green-200'
                   }`}
                 >
                   <p className="text-sm leading-relaxed">{message.text}</p>
@@ -104,12 +104,12 @@ export const Chat = () => {
             onChange={(e) => setInputMessage(e.target.value)}
             onKeyPress={handleKeyPress}
             placeholder={t('typePlaceholder')}
-            className="flex-1 bg-background/80 border-border/50 focus:border-primary/50 rounded-lg"
+            className="flex-1 bg-background/80 border-green-300/50 focus:border-green-500 rounded-lg"
           />
           <Button 
             onClick={handleSendMessage} 
             size="sm"
-            className="px-6 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg shadow-md"
+            className="px-6 bg-green-600 hover:bg-green-700 text-white rounded-lg shadow-md"
           >
             <Send className="h-4 w-4" />
           </Button>
