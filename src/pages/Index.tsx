@@ -135,12 +135,12 @@ const Index = () => {
                 ? 'bg-white/70 border-white/50' 
                 : 'bg-black/30 border-white/20'
             }`}>
-              <h2 className={`text-2xl md:text-3xl font-bold mb-6 text-center ${
-                theme === 'light' ? 'text-gray-800' : 'text-white'
-              }`}>
-                "O infinito não é apenas um conceito,<br/>
-                é a essência de todas as possibilidades."
-              </h2>
+              <h2 
+                className={`text-2xl md:text-3xl font-bold mb-6 text-center ${
+                  theme === 'light' ? 'text-gray-800' : 'text-white'
+                }`}
+                dangerouslySetInnerHTML={{ __html: t('infinitePoetry') }}
+              />
               
               {/* Video Promocional com Infinito Dourado */}
               <div className="relative aspect-video rounded-xl overflow-hidden border-2 border-yellow-300/50 shadow-2xl bg-gradient-to-br from-yellow-900 via-amber-800 to-orange-800">
@@ -182,7 +182,7 @@ const Index = () => {
               <p className={`text-center mt-4 ${
                 theme === 'light' ? 'text-gray-600' : 'text-gray-300'
               }`}>
-                Descubra as possibilidades infinitas do nosso chat inteligente
+                {t('infiniteDescription')}
               </p>
             </div>
           </div>

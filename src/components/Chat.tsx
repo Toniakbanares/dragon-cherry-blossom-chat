@@ -47,7 +47,7 @@ export const Chat = () => {
       setTimeout(() => {
         const adminResponse: Message = {
           id: (Date.now() + 1).toString(),
-          text: 'Obrigado pela mensagem! Em breve responderei.',
+          text: t('adminResponse'),
           sender: 'admin',
           timestamp: new Date()
         };

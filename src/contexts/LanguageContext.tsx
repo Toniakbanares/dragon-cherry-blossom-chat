@@ -19,7 +19,10 @@ const translations = {
     typePlaceholder: 'Digite sua mensagem...',
     scrollDown: 'Role para baixo',
     online: 'Online',
-    toggleTheme: 'Alternar tema'
+    toggleTheme: 'Alternar tema',
+    infinitePoetry: 'O infinito não é apenas um conceito,<br/>é a essência de todas as possibilidades.',
+    infiniteDescription: 'Descubra as possibilidades infinitas do nosso chat inteligente',
+    adminResponse: 'Obrigado pela mensagem! Em breve responderei.'
   },
   en: {
     welcome: 'Welcome',
@@ -29,7 +32,10 @@ const translations = {
     typePlaceholder: 'Type your message...',
     scrollDown: 'Scroll down',
     online: 'Online',
-    toggleTheme: 'Toggle theme'
+    toggleTheme: 'Toggle theme',
+    infinitePoetry: 'Infinity is not just a concept,<br/>it is the essence of all possibilities.',
+    infiniteDescription: 'Discover the infinite possibilities of our intelligent chat',
+    adminResponse: 'Thank you for your message! I will respond soon.'
   },
   es: {
     welcome: 'Bienvenido',
@@ -39,7 +45,10 @@ const translations = {
     typePlaceholder: 'Escribe tu mensaje...',
     scrollDown: 'Desplázate hacia abajo',
     online: 'En línea',
-    toggleTheme: 'Cambiar tema'
+    toggleTheme: 'Cambiar tema',
+    infinitePoetry: 'El infinito no es solo un concepto,<br/>es la esencia de todas las posibilidades.',
+    infiniteDescription: 'Descubre las posibilidades infinitas de nuestro chat inteligente',
+    adminResponse: '¡Gracias por tu mensaje! Responderé pronto.'
   }
 };
 
