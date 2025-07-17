@@ -138,7 +138,8 @@ const Index = () => {
               <h2 className={`text-2xl md:text-3xl font-bold mb-6 text-center ${
                 theme === 'light' ? 'text-gray-800' : 'text-white'
               }`}>
-                Veja como funciona
+                "O infinito não é apenas um conceito,<br/>
+                é a essência de todas as possibilidades."
               </h2>
               
               {/* Video Promocional com Infinito Dourado */}
